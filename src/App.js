@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 
 function App() {
-  const [titsbig, setTitsBig] = useState([]);
+  const [town, setTown] = useState([]);
 
 
  
@@ -15,14 +15,14 @@ function App() {
       .then((res) => res.json())
       .then((data) => {
         data.data.sort((a, b) => a.city.localeCompare(b.city));
-        setTitsBig(data.data);
+        setTown(data.data);
       });
   }, []);
 
   return (
     <div className="App">
       <select>
-        {titsbig.map((v, index) => {
+        {town.map((v, index) => {
           return <option key={index}>{v.city}</option>;
         })}
       </select>
