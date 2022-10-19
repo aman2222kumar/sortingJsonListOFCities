@@ -6,11 +6,9 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [titsbig, setTitsBig] = useState([]);
-  // const [country, setcountry] = useState();
 
-  // function handlechane(e) {
-  //   setcountry(e.target.value);
-  // }
+
+ 
 
   useEffect(() => {
     fetch("https://countriesnow.space/api/v0.1/countries/population/cities")
@@ -28,16 +26,7 @@ function App() {
           return <option key={index}>{v.city}</option>;
         })}
       </select>
-      {/* <input type="text" value={country} onChange={handlechane}></input>
-      <div>
-        {titsbig.map((r) => {
-          if (country === "") {
-            return country;
-          } else if (r.city.includes(country)) {
-            return r.city;
-          }
-        })}
-      </div> */}
+     
     </div>
   );
 }
